@@ -24,6 +24,6 @@ const NUMBER_ARGUMENT = 'number';
 // [START SillyNameMaker]
 exports.sillyNameMaker = functions.https.onRequest((request, response) => {
   const app = new App({request, response});
- 
+ app.tell('My name is');
 });
 // [END SillyNameMaker]
