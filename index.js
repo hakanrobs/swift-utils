@@ -24,6 +24,15 @@ const NUMBER_ARGUMENT = 'number';
 // [START SillyNameMaker]
 exports.sillyNameMaker = functions.https.onRequest((request, response) => {
   const app = new App({request, response});
- app.tell('My name is');
+ // Make a silly name
+  function makeName (app) {
+   
+    app.tell('Alright, your silly name is ');
+  }
+
+  let actionMap = new Map();
+  actionMap.set('make_name', makeName);
+
+  app.handleRequest(actionMap);
 });
 // [END SillyNameMaker]
